@@ -1,0 +1,16 @@
+<h1>List of all articles</h1>
+&nbsp;
+<%= link_to 'Create New', new_article_path %>
+
+<br>
+<table>
+<% @articles.each do |article| %> <!-- @foreach($articles as $article) -->
+	<tr>
+		<td><%= article.title %></td> <!--/. {{ $article.title }} -->
+		<td><%= article.body %></td> <!-- {{ $article.descripton }} -->
+		<td><%= link_to 'Show', article_path(article) %></td>
+		<td><%= link_to 'Edit', edit_article_path(article) %></td>
+		<td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?' } %></td>
+	</tr>
+<% end %>
+</table>

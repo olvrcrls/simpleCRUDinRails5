@@ -1,0 +1,30 @@
+<div>
+	<h2><%= @article.title %></h2>
+</div>
+
+<div>
+	<strong>Description:</strong>
+	<p><%= @article.body %></p>
+</div>
+
+<div>
+	<p><b>Add a comment</b></p>
+	<%= form_with(model: [ @article, @article.comment.build ], local: true) do |form| %>
+		<p>
+			<%= form.label :commenter %>
+			<%= form.text_field :commenter %>
+		</p>
+		<p>
+			<%= form.label :body %>
+			<%= form.text_area :body %>
+		</p>
+		<p>
+			<%= form.submit %>
+		</p>
+	<% end %>
+</div>
+
+<%= render 'comment' %>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Return', articles_path %>

@@ -1,0 +1,15 @@
+current directory: /home/zxcvf/Desktop/blogPracticeRails/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+/usr/bin/ruby2.3 -r ./siteconf20180129-29910-1fl6gjo.rb extconf.rb
+creating Makefile
+
+current directory: /home/zxcvf/Desktop/blogPracticeRails/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/zxcvf/Desktop/blogPracticeRails/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/zxcvf/Desktop/blogPracticeRails/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20180129-29910-1xc8fo0
