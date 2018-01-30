@@ -1,10 +1,14 @@
 class ArticlesController < ApplicationController
+	# before_action takes place before the method is being called
+	# referencing a private method that will first be used
+	# :only is for the specific methods that are scoped by the `before_action`
+	
+	before_action :find_book, only: [:show, :update, :edit, :destroy]
 	def index
 		@articles = Article.all #fetching all the articles
 	end #index method
 
 	def show
-		@article = Article.find(params[:id])
 	end #show method
 
 	def new
@@ -21,11 +25,9 @@ class ArticlesController < ApplicationController
 	end #create method
 
 	def edit
-		@article = Article.find(params[:id])
 	end #edit method
 
 	def update
-		@article = Article.find(params[:id])
 		if (@article.update(article_parameters))
 			redirect_to @article
 		else
@@ -34,9 +36,7 @@ class ArticlesController < ApplicationController
 	end #update method
 
 	def destroy
-		@article = Article.find(params[:id])
 		@article.destroy
-
 		redirect_to articles_path
 	end #destroy method
 
@@ -47,5 +47,9 @@ class ArticlesController < ApplicationController
 	private
 		def article_parameters
 			params.require(:article).permit(:title, :body)
+		end
+
+		def find_book
+			@article = Article.find(params[:id])
 		end
 end
